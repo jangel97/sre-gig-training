@@ -1,4 +1,4 @@
-# README for Your CLI Application
+# Jokes and Philosophical quotes Client
 
 ## Overview
 
