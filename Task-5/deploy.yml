@@ -1,0 +1,25 @@
+kubectl apply -f - <<EOF
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: operator
+  name: operator
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: operator
+  template:
+    metadata:
+      labels:
+        app: operator
+    spec:
+      nodeSelector:
+        role: app
+      containers:
+      - image: localhost:5001/task-5
+        imagePullPolicy: IfNotPresent
+        name: hello-app
+EOF
